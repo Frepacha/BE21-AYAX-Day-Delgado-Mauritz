@@ -18,11 +18,13 @@
 
 <body>
     <h1>Working with XML | intermediate</h1>
-    <button class="btn btn-primary" type="button" onclick="loadData()">Get my Songs collection</button>
+    <button class="btn btn-primary btn-sm" type="button" onclick="loadData()">Get my Songs collection</button>
     <br>
     <br>
-    <div id="content">
-        <!-- Here the content from myFunction() will be displayed -->
+    <div class="container d-flex justify-content-center">
+        <div id="content">
+            <!-- Here the content from myFunction() will be displayed -->
+        </div>
     </div>
     <script>
         function loadData() {
