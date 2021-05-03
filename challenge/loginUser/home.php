@@ -64,7 +64,7 @@ height: 200px;
 
             function getmusic() {
                 const request = new XMLHttpRequest(); //create new request
-                request.open("GET", "home.php", true); //set request as a GET method connecting to users.php
+                request.open("GET", "music.json", true); //set request as a GET method connecting to --> json file
                 request.onload = function() {
                     if (this.status == 200) {
                         let music = JSON.parse(this.responseText); //data received is turned into JS objects
@@ -72,8 +72,9 @@ height: 200px;
                         let output = ''; //create container variable
                         // users.forEach(user => {
                         for (let i in music) {
-                            output += `<p>Titel: ${music[i].title} 
-                       Artist: ${music[i].artist} Year: ${music[i].year} <a href="${music[i].web_url}">Web-url: Click hier</a>  image: ${music[i].img_url}</p>`; //loop through each object and display their properties
+                            output += `<p>Titel: ${music[i].title} <br> 
+                       Artist: ${music[i].artist} <br> Year: ${music[i].year} <br> <a href="${music[i].web_url}">Web-url: Click hier</a> <br> <img src="${music[i].img_url}" alt="${music[i].title}"></p>`; //loop through each object and display their properties
+
 
                         }
                         document.getElementById('music').innerHTML = output; //output results in div#music
@@ -83,6 +84,6 @@ height: 200px;
                 request.send(); //send request
             }
         </script>
-        
+        <img src="" alt="">
 </body>
 </html>
